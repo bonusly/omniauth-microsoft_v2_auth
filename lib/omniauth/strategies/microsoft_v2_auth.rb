@@ -5,7 +5,7 @@ module OmniAuth
     class MicrosoftV2Auth < OmniAuth::Strategies::OAuth2
       option :name, :microsoft_v2_auth
 
-      DEFAULT_SCOPE = "openid email profile https://graph.microsoft.com/User.Read"
+      DEFAULT_SCOPE = 'openid email profile https://graph.microsoft.com/User.Read'
 
       option :client_options, {
         site:          'https://login.microsoftonline.com',
@@ -13,7 +13,14 @@ module OmniAuth
         token_url:     '/common/oauth2/v2.0/token'
       }
 
-     option :authorize_options, [:scope]
+      option :authorize_options, [:scope]
+
+      info do
+        prune!({ :name       => "#{raw_info['givenName']} #{raw_info['surname']}",
+                 :email      => raw_info['mail'],
+                 :first_name => raw_info['givenName'],
+                 :last_name  => raw_info['surname'] })
+      end
 
       uid { raw_info["id"] }
 
@@ -42,7 +49,6 @@ module OmniAuth
       def callback_url
         options[:redirect_uri] || (full_host + script_name + callback_path)
       end
-
     end
   end
 end
