@@ -1,32 +1,32 @@
 PATH
   remote: .
   specs:
-    omniauth-microsoft_v2_auth (0.1.1)
+    omniauth-microsoft_v2_auth (0.1.2)
       omniauth-oauth2
 
 GEM
   remote: https://rubygems.org/
   specs:
-    faraday (0.15.3)
+    faraday (1.0.0)
       multipart-post (>= 1.2, < 3)
-    hashie (3.5.7)
-    jwt (2.1.0)
-    multi_json (1.13.1)
+    hashie (3.6.0)
+    jwt (2.2.1)
+    multi_json (1.14.1)
     multi_xml (0.6.0)
-    multipart-post (2.0.0)
-    oauth2 (1.4.1)
-      faraday (>= 0.8, < 0.16.0)
+    multipart-post (2.1.1)
+    oauth2 (1.4.2)
+      faraday (>= 0.8, < 2.0)
       jwt (>= 1.0, < 3.0)
       multi_json (~> 1.3)
       multi_xml (~> 0.5)
       rack (>= 1.2, < 3)
-    omniauth (1.8.1)
-      hashie (>= 3.4.6, < 3.6.0)
+    omniauth (1.9.0)
+      hashie (>= 3.4.6, < 3.7.0)
       rack (>= 1.6.2, < 3)
-    omniauth-oauth2 (1.5.0)
+    omniauth-oauth2 (1.6.0)
       oauth2 (~> 1.1)
-      omniauth (~> 1.2)
-    rack (2.0.6)
+      omniauth (~> 1.9)
+    rack (2.0.8)
 
 PLATFORMS
   ruby
@@ -36,4 +36,4 @@ DEPENDENCIES
   omniauth-microsoft_v2_auth!
 
 BUNDLED WITH
-   1.17.1
+   1.17.2
