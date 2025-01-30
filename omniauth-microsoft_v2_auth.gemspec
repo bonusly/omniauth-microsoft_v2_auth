@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.description   = 'omniauth provider for Microsoft V2 Authentication'
   spec.homepage      = 'https://github.com/cbales/omniauth-microsoft_v2_auth'
   spec.license       = 'MIT'
-  spec.metadata['allowed_push_host'] = 'https://rubygems.bonusly.dev/private'
+  spec.metadata['allowed_push_host'] = 'https://rubygems.pkg.github.com/bonusly'
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }

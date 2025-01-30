@@ -29,30 +29,6 @@ end
 
 ## Publishing
 
-To publish to our private gemserver you will first need to get the api key.
+This is a public repo, so we don't need to publish the gem in order to pull the changes into an application. Add this line to your Gemfile to get this gem: `gem "omniauth-microsoft_v2_auth", github: "bonusly/omniauth-microsoft_v2_auth"`
 
-The api key can be found in vault: https://vault.bonus.ly/ui/vault/secrets/kv/show/global/gemstash
-
-To set it correctly first check to see if you already have a file at `~/.gem/credentials` if you do
-you can skip to editing that file. If not follow these steps to create it:
-
-```shell
-$ mkdir -p ~/.gem
-$ touch ~/.gem/credentials
-$ chmod 0600 ~/.gem/credentials
-```
-
-Once you have a credentials file you will need to add the following line to it:
-
-```yaml
----
-:private_gemserver_key: <API KEY GOES HERE>
-```
-
-Now that you have the credentials configured use the following command to push a new version to the private gemserver:
-
-```shell
-$ gem push --key private_gemserver_key --host https://rubygems.bonusly.dev/private pkg/omniauth-microsoft_v2_auth-X.X.X.gem
-```
-
-Now you can have the applications which use this gem run bundle update to get the new version.
+When you have changes that you want to pull into an app (i.e. something you would publish as a new version), you can just run `bundle update omniauth-microsoft_v2_auth` in the repo.
